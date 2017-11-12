@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import pk.habsoft.demo.estore.dto.CategoryDTO;
-import pk.habsoft.demo.estore.dto.ProductDTO;
+import pk.habsoft.demo.estore.model.CategoryDTO;
+import pk.habsoft.demo.estore.model.ProductDTO;
 
 @Service
 public class ProductService {

@@ -1,4 +1,4 @@
-package pk.habsoft.demo.estore.dto;
+package pk.habsoft.demo.estore.model;
 
 import java.util.List;
 
