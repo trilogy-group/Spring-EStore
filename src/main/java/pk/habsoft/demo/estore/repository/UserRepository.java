@@ -15,6 +15,7 @@ public class UserRepository {
     static {
         USERS.add(new UserDTO("Criss", "Jordan", "user", "user", new String[] { "ROLE_USER" }));
         USERS.add(new UserDTO("Micheal", "Clarke", "admin", "admin", new String[] { "ROLE_ADMIN" }));
+        USERS.add(new UserDTO("Obama", "Naik", "any", "any", null));
     }
 
     public Optional<UserDTO> findByUsername(String username) {

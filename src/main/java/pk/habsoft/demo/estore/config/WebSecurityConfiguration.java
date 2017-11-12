@@ -1,6 +1,7 @@
 package pk.habsoft.demo.estore.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -8,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.stereotype.Component;
 
+import pk.habsoft.demo.estore.endpoint.Api;
 import pk.habsoft.demo.estore.model.UserDTO;
 import pk.habsoft.demo.estore.security.DetailsService;
 
@@ -31,9 +33,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
-        .authorizeRequests()        
+        .authorizeRequests() 
+            .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()//allow CORS option calls
             .antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources", "/configuration/security",
                         "/swagger-ui.html", "/webjars/**", "/swagger-resources/configuration/ui").permitAll()
+            .antMatchers(Api.UrlAuthorization.BASE_URL + Api.UrlAuthorization.USER_PAGE).hasRole("USER") // Shouln't user (ROLE_USER)
+            .antMatchers(Api.UrlAuthorization.BASE_URL + Api.UrlAuthorization.ADMIN_PAGE).hasRole("ADMIN")
             .anyRequest().authenticated()
                 .and()
                 .httpBasic();

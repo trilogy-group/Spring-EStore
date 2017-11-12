@@ -76,6 +76,8 @@ public class UserDTO implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        if (getRoles() == null || getRoles().length == 0)
+            return AuthorityUtils.NO_AUTHORITIES;
         return AuthorityUtils.createAuthorityList(getRoles());
     }
 
