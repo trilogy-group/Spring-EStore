@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
 import pk.habsoft.demo.estore.dto.ProductDTO;
 import pk.habsoft.demo.estore.service.ProductService;
 
+@Api("products")
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductEndPoint {
 
 	@Autowired
