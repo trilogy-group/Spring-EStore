@@ -8,4 +8,11 @@ public interface Api {
         String ADMIN_PAGE = "/adminpage";
         String COMMON_PAGE = "/commonpage";
     }
+
+    public interface MethodAuthorization {
+        String BASE_URL = "/methodsecurity";
+        String USER_PAGE = "/userpage";
+        String ADMIN_PAGE = "/adminpage";
+        String COMMON_PAGE = "/commonpage";
+    }
 }

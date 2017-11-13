@@ -24,3 +24,10 @@ Also need to exclude Swagger-UI resources from security configuration in order t
 API's can be protected against user roles in WebSecurityConfiguration.java file.
 
 > `http.antMatchers("/users/*").hasRole("USER")`
+
+## Methods level security
+Method level security can be enabled using
+> `@EnableGlobalMethodSecurity(prePostEnabled = true)`  
+
+Then you can use @PreAuthorize annotaion on methods.  
+> `@PreAuthorize("hasRole('ADMIN')")` or `@PreAuthorize("hasAuthority('ROLE_ADMIN')")`
