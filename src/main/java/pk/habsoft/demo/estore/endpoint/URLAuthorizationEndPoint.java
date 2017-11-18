@@ -10,7 +10,7 @@ public class URLAuthorizationEndPoint {
 
     @RequestMapping(value = Endpoints.UrlAuthorization.USER_PAGE, method = RequestMethod.GET)
     public String testUserRole() {
-        return "Only users can access this page.";
+        return "Only users can access this page";
     }
 
     @RequestMapping(value = Endpoints.UrlAuthorization.ADMIN_PAGE, method = RequestMethod.GET)

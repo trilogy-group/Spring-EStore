@@ -31,7 +31,7 @@ import pk.habsoft.demo.estore.security.AppUserDetailsService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = EStoreApp.class)
 @WebAppConfiguration
-public class ProductServiceIntegrationTest {
+public class ProductEndpointIntegrationTest {
 
     // https://github.com/rwinch/spring-security-test-blog/blob/master/src/test/java/org/springframework/security/test/web/servlet/showcase/secured/SecurityRequestsTests.java
 
