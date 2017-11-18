@@ -16,7 +16,7 @@ public class MethodAuthorizationEndPoint {
     @RequestMapping(value = Endpoints.MethodAuthorization.USER_PAGE, method = RequestMethod.GET)
     @PreAuthorize(HAS_ROLE_USER)
     public String testUserRole() {
-        return "Only users can access this page.";
+        return "Only users can access this page";
     }
 
     @RequestMapping(value = Endpoints.MethodAuthorization.ADMIN_PAGE, method = RequestMethod.GET)
