@@ -10,9 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.stereotype.Component;
 
-import pk.habsoft.demo.estore.endpoint.Api;
+import pk.habsoft.demo.estore.endpoint.Endpoints;
 import pk.habsoft.demo.estore.model.UserDTO;
-import pk.habsoft.demo.estore.security.DetailsService;
+import pk.habsoft.demo.estore.security.AppUserDetailsService;
 
 @Component
 @EnableWebSecurity()
@@ -20,7 +20,7 @@ import pk.habsoft.demo.estore.security.DetailsService;
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    DetailsService detailsService;
+    AppUserDetailsService detailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -30,8 +30,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off
+        System.out.println("Configure security");
         http
-        .csrf().disable()
+        //.csrf().disable()
         .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
@@ -39,8 +40,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()//allow CORS option calls
             .antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources", "/configuration/security",
                         "/swagger-ui.html", "/webjars/**", "/swagger-resources/configuration/ui").permitAll()
-            .antMatchers(Api.UrlAuthorization.BASE_URL + Api.UrlAuthorization.USER_PAGE).hasRole("USER") // Shouln't user (ROLE_USER)
-            .antMatchers(Api.UrlAuthorization.BASE_URL + Api.UrlAuthorization.ADMIN_PAGE).hasRole("ADMIN")
+            .antMatchers(Endpoints.UrlAuthorization.BASE_URL + Endpoints.UrlAuthorization.USER_PAGE).hasRole("USER") // Shouln't user (ROLE_USER)
+            .antMatchers(Endpoints.UrlAuthorization.BASE_URL + Endpoints.UrlAuthorization.ADMIN_PAGE).hasRole("ADMIN")
             .anyRequest().authenticated()
                 .and()
                 .httpBasic();

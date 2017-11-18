@@ -12,7 +12,7 @@ import pk.habsoft.demo.estore.model.UserDTO;
 import pk.habsoft.demo.estore.repository.UserRepository;
 
 @Component
-public class DetailsService implements UserDetailsService {
+public class AppUserDetailsService implements UserDetailsService {
 
     @Autowired
     UserRepository users;

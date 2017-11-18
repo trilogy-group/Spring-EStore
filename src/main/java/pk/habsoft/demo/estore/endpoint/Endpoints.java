@@ -1,6 +1,12 @@
 package pk.habsoft.demo.estore.endpoint;
 
-public interface Api {
+public interface Endpoints {
+
+    public interface ProductEndpoint {
+        String BASE_URL = "/product";
+        String GET_ALL_PRODUCTS = "";
+        String GET_BY_ID = "/{id}";
+    }
 
     public interface UrlAuthorization {
         String BASE_URL = "/urlsecurity";

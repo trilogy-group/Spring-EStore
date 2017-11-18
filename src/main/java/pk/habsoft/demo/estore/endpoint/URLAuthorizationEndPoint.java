@@ -5,20 +5,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(Api.UrlAuthorization.BASE_URL)
+@RequestMapping(Endpoints.UrlAuthorization.BASE_URL)
 public class URLAuthorizationEndPoint {
 
-    @RequestMapping(value = Api.UrlAuthorization.USER_PAGE, method = RequestMethod.GET)
+    @RequestMapping(value = Endpoints.UrlAuthorization.USER_PAGE, method = RequestMethod.GET)
     public String testUserRole() {
         return "Only users can access this page.";
     }
 
-    @RequestMapping(value = Api.UrlAuthorization.ADMIN_PAGE, method = RequestMethod.GET)
+    @RequestMapping(value = Endpoints.UrlAuthorization.ADMIN_PAGE, method = RequestMethod.GET)
     public String testAdminRole() {
         return "Only admins can access this page";
     }
 
-    @RequestMapping(value = Api.UrlAuthorization.COMMON_PAGE, method = RequestMethod.GET)
+    @RequestMapping(value = Endpoints.UrlAuthorization.COMMON_PAGE, method = RequestMethod.GET)
     public String testCommonRole() {
         return "Anyone can access this page";
     }

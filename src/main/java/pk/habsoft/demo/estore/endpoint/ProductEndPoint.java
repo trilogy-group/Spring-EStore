@@ -15,19 +15,19 @@ import pk.habsoft.demo.estore.service.ProductService;
 
 @Api("products")
 @RestController
-@RequestMapping("/product")
+@RequestMapping(Endpoints.ProductEndpoint.BASE_URL)
 public class ProductEndPoint {
 
     @Autowired
     private ProductService productService;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = Endpoints.ProductEndpoint.GET_BY_ID, method = RequestMethod.GET)
     @ApiImplicitParam(name = "Authorization", value = "Authorization token", required = true, dataType = "string", paramType = "header")
     public ProductDTO getById(@PathVariable Long id) {
         return productService.getById(id);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = Endpoints.ProductEndpoint.GET_ALL_PRODUCTS, method = RequestMethod.GET)
     @ApiImplicitParam(name = "Authorization", value = "Authorization token", required = true, dataType = "string", paramType = "header")
     public List<ProductDTO> getAllProducts() {
         return productService.getAllProducts();
