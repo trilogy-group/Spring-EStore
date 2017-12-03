@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import pk.habsoft.demo.estore.EStoreApp;
-import pk.habsoft.demo.estore.security.AppUserDetailsService;
+import pk.habsoft.demo.estore.service.impl.AppUserDetailsServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = EStoreApp.class)
@@ -43,7 +43,7 @@ public class ProductEndpointIntegrationTest {
     private MockMvc mvc;
 
     @Autowired
-    private AppUserDetailsService userDetailsService;
+    private AppUserDetailsServiceImpl userDetailsService;
 
     @Before
     public void setUp() {

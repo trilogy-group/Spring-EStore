@@ -1,19 +1,17 @@
 package pk.habsoft.demo.estore.model;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDTO implements UserDetails {
 
     private static final long serialVersionUID = 1L;
-    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     private String firstName;
     private String lastName;
     private String username;
@@ -63,7 +61,7 @@ public class UserDTO implements UserDetails {
     }
 
     public void setPassword(String password) {
-        this.password = PASSWORD_ENCODER.encode(password);
+        this.password = password;
     }
 
     public String[] getRoles() {
@@ -100,4 +98,11 @@ public class UserDTO implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO [firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
+                + password + ", roles=" + Arrays.toString(roles) + "]";
+    }
+
 }

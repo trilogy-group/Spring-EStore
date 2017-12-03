@@ -2,6 +2,13 @@ package pk.habsoft.demo.estore.endpoint;
 
 public interface Endpoints {
 
+    String CONTEXT_PATH = "/estore";
+
+    public interface Auth {
+        String BASE_URI = "/auth";
+        String LOGIN = "/login";
+    }
+
     public interface ProductEndpoint {
         String BASE_URL = "/product";
         String GET_ALL_PRODUCTS = "";
