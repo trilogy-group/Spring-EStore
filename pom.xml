@@ -50,6 +50,12 @@
 			<version>2.2.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+
 		<!-- Testing libraries -->
 		<dependency>
 			<groupId>junit</groupId>
