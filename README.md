@@ -36,3 +36,4 @@ Then you can use @PreAuthorize annotaion on methods.
 # Other Spring Concepts
 1. Validating spring properties on bootstrap and fail fast if any important property is missing.    
 `BeanFactoryPostProcessor is used in VerifierBean for this purpose.`
+2. StartupLoggingBean implemented to log some environment info at application startup
