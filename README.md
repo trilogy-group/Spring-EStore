@@ -31,3 +31,8 @@ Method level security can be enabled using
 
 Then you can use @PreAuthorize annotaion on methods.  
 > `@PreAuthorize("hasRole('ADMIN')")` or `@PreAuthorize("hasAuthority('ROLE_ADMIN')")`
+
+
+# Other Spring Concepts
+1. Validating spring properties on bootstrap and fail fast if any important property is missing.    
+`BeanFactoryPostProcessor is used in VerifierBean for this purpose.`
