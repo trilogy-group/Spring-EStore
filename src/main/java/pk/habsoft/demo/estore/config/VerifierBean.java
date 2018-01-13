@@ -24,7 +24,7 @@ public class VerifierBean implements BeanFactoryPostProcessor, PriorityOrdered {
 		Environment env = beanFactory.getBean(Environment.class);
 		System.err.println("Processing VerifierBean:postProcessBeanFactory()");
 		if (env.getProperty("estore.property") == null) {
-			throw new ApplicationContextException("Application proprty missing : " + "estore.property");
+			//throw new ApplicationContextException("Application proprty missing : " + "estore.property");
 		}
 
 	}

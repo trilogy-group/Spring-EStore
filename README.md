@@ -41,8 +41,22 @@ Then you can use @PreAuthorize annotaion on methods.
 
 # Code Quality Analysis
 
-## SonarQube integration
-#### Prerequisites
-1. SonarQube already installed and running (url=my.sonar.host:9000) 
-#### Run following command to analyze project and post results on server
+#### SonarQube integration with Maven
+*Prerequisites*
+1. SonarQube already installed and running (url=my.sonar.host:9000)    
+
+*Run following command to analyze project and post results on sonar server*
 > `mvn clean install -Psonar sonar:sonar`
+
+#### Code Coverage with JaCoCo maven plugin
+*Run following command for code coverage and post results on sonar server*
+> `mvn clean install sonar:sonar`
+
+### Note:
+#### Maven Surefire Plugin
+It is used to run unit tests.
+
+#### Maven Failsafe Plugin
+It is used to run integration tests.
+This plugin will not fail build during `mvn integration-test` phase.
+Failsafe plugin only executes test classes named `*/IT.java, **/*IT.java, **/*ITCase.java`

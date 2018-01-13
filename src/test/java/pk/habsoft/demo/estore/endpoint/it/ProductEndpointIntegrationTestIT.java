@@ -1,4 +1,4 @@
-package pk.habsoft.demo.estore.endpoint;
+package pk.habsoft.demo.estore.endpoint.it;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
@@ -31,7 +31,7 @@ import pk.habsoft.demo.estore.service.impl.AppUserDetailsServiceImpl;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = EStoreApp.class)
 @WebAppConfiguration
-public class ProductEndpointIntegrationTest {
+public class ProductEndpointIntegrationTestIT {
 
     // https://github.com/rwinch/spring-security-test-blog/blob/master/src/test/java/org/springframework/security/test/web/servlet/showcase/secured/SecurityRequestsTests.java
 
