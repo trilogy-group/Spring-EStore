@@ -37,3 +37,12 @@ Then you can use @PreAuthorize annotaion on methods.
 1. Validating spring properties on bootstrap and fail fast if any important property is missing.    
 `BeanFactoryPostProcessor is used in VerifierBean for this purpose.`
 2. StartupLoggingBean implemented to log some environment info at application startup
+
+
+# Code Quality Analysis
+
+## SonarQube integration
+#### Prerequisites
+1. SonarQube already installed and running (url=my.sonar.host:9000) 
+#### Run following command to analyze project and post results on server
+> `mvn clean install -Psonar sonar:sonar`

@@ -72,7 +72,6 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 		</dependency>
-
 	</dependencies>
 
 
@@ -85,5 +84,22 @@
 		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Optional URL to server. Default value is http://localhost:9000 -->
+				<sonar.host.url>
+					http://13.126.11.59:9000
+				</sonar.host.url>
+				<sonar.login>
+					3aa5d95ccb40c8df7f69d943864a77f40d0c2d21
+				</sonar.login>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
