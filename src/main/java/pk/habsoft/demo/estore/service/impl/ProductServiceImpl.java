@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import pk.habsoft.demo.estore.aop.audit.Auditable;
 import pk.habsoft.demo.estore.model.CategoryDTO;
 import pk.habsoft.demo.estore.model.ProductDTO;
 import pk.habsoft.demo.estore.service.ProductService;
@@ -31,7 +32,9 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see pk.habsoft.demo.estore.service.impl.ProductService#getAllProducts()
      */
     @Override
@@ -39,10 +42,15 @@ public class ProductServiceImpl implements ProductService {
         return new ArrayList<>(PRODUCTS);
     }
 
-    /* (non-Javadoc)
-     * @see pk.habsoft.demo.estore.service.impl.ProductService#getById(java.lang.Long)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * pk.habsoft.demo.estore.service.impl.ProductService#getById(java.lang.
+     * Long)
      */
     @Override
+    @Auditable(userId = 1, message = "getById called")
     public ProductDTO getById(Long id) {
         for (ProductDTO productDTO : PRODUCTS) {
             if (productDTO.getId() == id)
