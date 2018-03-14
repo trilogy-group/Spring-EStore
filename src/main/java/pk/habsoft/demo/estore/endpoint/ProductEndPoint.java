@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ResponseHeader;
 import pk.habsoft.demo.estore.model.ProductDTO;
 import pk.habsoft.demo.estore.service.ProductService;
 
@@ -23,6 +27,10 @@ public class ProductEndPoint {
 
     @RequestMapping(value = Endpoints.ProductEndpoint.GET_BY_ID, method = RequestMethod.GET)
     @ApiImplicitParam(name = "Authorization", value = "Authorization token", required = true, dataType = "string", paramType = "header")
+    @ApiOperation("Get product by Id")
+    @ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully retrieved product"),
+            @ApiResponse(code = 401, message = "You are not authorized to get product") })
+    @ResponseHeader(name = "CUSTOM-HEADER", description = "Custorm header in response")
     public ProductDTO getById(@PathVariable Long id) {
         return productService.getById(id);
     }
