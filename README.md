@@ -55,6 +55,9 @@ Mostly used for `logging` and `verification`.
 [OpenPojo](https://github.com/OpenPojo/openpojo) is used to test getters/setters automatically.  
 See [this](https://github.com/OpenPojo/openpojo/wiki) tutorial for full capabilities of OpenPojo.
 
+##### Testing Getters/Setters
+[EqualsVerifier](http://jqno.nl/equalsverifier/) is used to test equals and hashCode methods.
+
 ---
 
 ## Swagger configuration
