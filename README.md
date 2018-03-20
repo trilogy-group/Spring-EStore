@@ -44,11 +44,24 @@ Mostly used for `logging` and `verification`.
 `BeanFactoryPostProcessor is used in VerifierBean for this purpose.`
 2. StartupLoggingBean implemented to log some environment info at application startup
 
+---
 
+## Unit Testing
+
+#### Automated Testing
+
+##### Testing Getters/Setters
+
+[OpenPojo](https://github.com/OpenPojo/openpojo) is used to test getters/setters automatically.  
+See [this](https://github.com/OpenPojo/openpojo/wiki) tutorial for full capabilities of OpenPojo.
+
+---
 
 ## Swagger configuration
 
 - Swagger UI can be seen using this URL : [/estore/swagger-ui.html](http://localhost:8181/estore/swagger-ui.html)
+
+---
 
 ## Code Quality Analysis
 
