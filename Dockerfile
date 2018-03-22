@@ -1,4 +1,4 @@
-# Use an official Python runtime as a parent image
+# Use an official java-8 as a parent image
 FROM openjdk:8
 
 # Set the working directory to /app
