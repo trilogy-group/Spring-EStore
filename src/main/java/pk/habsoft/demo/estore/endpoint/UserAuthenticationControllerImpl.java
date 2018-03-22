@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pk.habsoft.demo.estore.model.LoginRequest;
 
 @RestController
-@RequestMapping(value = Endpoints.Auth.BASE_URI)
+@RequestMapping(value = Endpoints.Auth.BASE_URL)
 public class UserAuthenticationControllerImpl {
 
     private static final Log LOGGER = LogFactory.getLog(UserAuthenticationControllerImpl.class);

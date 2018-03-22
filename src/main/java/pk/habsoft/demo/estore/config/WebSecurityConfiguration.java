@@ -17,7 +17,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.stereotype.Component;
 
 import pk.habsoft.demo.estore.endpoint.Endpoints;
-import pk.habsoft.demo.estore.model.UserDTO;
 import pk.habsoft.demo.estore.security.AccountAuthenticationProvider;
 import pk.habsoft.demo.estore.security.AuthenticationFilter;
 import pk.habsoft.demo.estore.security.TokenAuthenticationProvider;
@@ -61,6 +60,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html", "/webjars/**", "/swagger-resources/configuration/ui").permitAll()
             .antMatchers(Endpoints.UrlAuthorization.BASE_URL + Endpoints.UrlAuthorization.USER_PAGE).hasRole("USER") // Shouln't user (ROLE_USER)
             .antMatchers(Endpoints.UrlAuthorization.BASE_URL + Endpoints.UrlAuthorization.ADMIN_PAGE).hasRole("ADMIN")
+            .antMatchers(Endpoints.Test.BASE_URL).permitAll()
             .anyRequest().authenticated()
           //      .and()
           //      .httpBasic()

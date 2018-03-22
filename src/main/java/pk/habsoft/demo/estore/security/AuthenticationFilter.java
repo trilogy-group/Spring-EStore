@@ -140,7 +140,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
     }
 
     private boolean postToAuthenticate(HttpServletRequest httpRequest, String resourcePath) {
-        return (Endpoints.CONTEXT_PATH + Endpoints.Auth.BASE_URI + Endpoints.Auth.LOGIN).equalsIgnoreCase(resourcePath)
+        return (Endpoints.CONTEXT_PATH + Endpoints.Auth.BASE_URL + Endpoints.Auth.LOGIN).equalsIgnoreCase(resourcePath)
                 && HttpMethod.POST.matches(httpRequest.getMethod());
     }
 }

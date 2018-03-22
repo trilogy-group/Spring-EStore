@@ -4,8 +4,12 @@ public interface Endpoints {
 
     String CONTEXT_PATH = "/estore";
 
+    public interface Test {
+        String BASE_URL = "/test";
+    }
+    
     public interface Auth {
-        String BASE_URI = "/auth";
+        String BASE_URL = "/auth";
         String LOGIN = "/login";
     }
 
