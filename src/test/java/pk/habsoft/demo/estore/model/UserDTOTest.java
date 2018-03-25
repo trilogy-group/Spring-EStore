@@ -11,8 +11,6 @@ import com.openpojo.validation.rule.impl.SetterMustExistRule;
 import com.openpojo.validation.test.impl.GetterTester;
 import com.openpojo.validation.test.impl.SetterTester;
 
-import pk.habsoft.demo.estore.model.UserDTO;
-
 public class UserDTOTest {
 
     @Test

@@ -33,7 +33,7 @@ public class StartupLoggingBean implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
-        logger.info("============================================================================");
+        logger.debug("============================================================================");
         try {
             logEnvTarget(env);
             logActiveSpringProfile(env);

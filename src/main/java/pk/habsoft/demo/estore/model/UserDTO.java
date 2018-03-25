@@ -148,7 +148,7 @@ public class UserDTO implements UserDetails {
     @Override
     public String toString() {
         return "UserDTO [firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
-                + password + ", roles=" + Arrays.toString(roles) + "]";
+                + password + ", roles=" + roles + "]";
     }
 
 }

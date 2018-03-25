@@ -46,4 +46,11 @@ public class CategoryDTO extends BaseDTO {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "CategoryDTO [products=" + products + "]";
+    }
+    
+    
+
 }

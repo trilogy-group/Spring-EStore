@@ -58,4 +58,9 @@ public class ProductDTO extends BaseDTO {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "ProductDTO [price=" + price + ", category=" + category + "]";
+    }
+
 }
