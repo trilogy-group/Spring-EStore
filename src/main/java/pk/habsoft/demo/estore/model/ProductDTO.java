@@ -45,8 +45,6 @@ public class ProductDTO extends BaseDTO {
             return false;
         if (this == obj)
             return true;
-        if (getClass() != obj.getClass())
-            return false;
         ProductDTO other = (ProductDTO) obj;
         if (category == null) {
             if (other.category != null)

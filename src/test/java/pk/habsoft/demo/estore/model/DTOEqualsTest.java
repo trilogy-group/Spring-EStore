@@ -16,6 +16,12 @@ public class DTOEqualsTest {
 
         EqualsVerifier.forClass(ProductDTO.class).suppress(warnings).usingGetClass()
                 .withPrefabValues(ProductDTO.class, p1, p2).verify();
+
+        CategoryDTO c1 = new CategoryDTO(1L, "cat-1");
+        CategoryDTO c2 = new CategoryDTO(2L, "cat-2");
+
+        EqualsVerifier.forClass(CategoryDTO.class).suppress(warnings).usingGetClass()
+                .withPrefabValues(CategoryDTO.class, c1, c2).verify();
     }
 
     @Test
