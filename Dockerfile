@@ -5,8 +5,13 @@ FROM openjdk:8
 WORKDIR /data/app
 
 # Copy the current directory contents into the container at /app
-ADD estore.jar /data/app
+ADD . /data/app
 # COPY . /usr/src/myapp
+
+RUN apt-get update && apt-get install -y maven
+
+# Build the application
+RUN mvn clean install
 
 # Make port 8181 available to the world outside this container
 EXPOSE 8181
@@ -16,11 +21,11 @@ EXPOSE 8181
 #ENV https_proxy host:port
 
 # Declare env variables
-ENV MAIN_JAR estore.jar
+ENV MAIN_JAR target/estore-0.0.1-SNAPSHOT.jar
 RUN echo "Main jar file is $MAIN_JAR"
 
 # Run app when the container launches
-#CMD ["java", "-jar", "estore.jar"]
+#CMD ["java", "-jar", "target/estore-0.0.1-SNAPSHOT.jar"]
 
 # or using entry point
 ENTRYPOINT java -jar $MAIN_JAR
