@@ -19,6 +19,7 @@ pipeline {
             steps {
                 echo 'Build, Tests and Code Coverage...'
                 sh "mvn clean build"
+                sh "mvn test"
 
                 echo 'Publish coverage report...'
                 step([
