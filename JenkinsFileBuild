@@ -1,0 +1,41 @@
+pipeline {
+
+    agent { label 'vasona' }
+
+    options {
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '20'))
+        disableConcurrentBuilds()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Tests and Code Coverage') {
+            steps {
+                echo 'Build, Tests and Code Coverage...'
+                sh "mvn clean build"
+
+                echo 'Publish coverage report...'
+                step([
+                        $class        : 'JacocoPublisher',
+                        buildOverBuild: false,
+                ])
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '**/surefire-reports/*.xml'
+        }
+        cleanup {
+            cleanWs()
+        }
+    }
+
+}
