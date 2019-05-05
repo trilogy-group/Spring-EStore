@@ -1,6 +1,6 @@
 pipeline {
 
-    agent { label 'vasona' }
+    agent { label 'beckon-postgres-builder' }
 
     options {
         timestamps()
