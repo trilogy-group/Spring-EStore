@@ -18,8 +18,13 @@ pipeline {
         stage('Build Tests and Code Coverage') {
             steps {
                 echo 'Build, Tests and Code Coverage...'
-                sh "mvn clean install"
-                sh "mvn test"
+                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java') {
+                    sh "mvn clean install"
+                }
+                
+                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java') {
+                    sh "mvn test"
+                }
 
                 echo 'Publish coverage report...'
                 step([
