@@ -18,11 +18,11 @@ pipeline {
         stage('Build Tests and Code Coverage') {
             steps {
                 echo 'Build, Tests and Code Coverage...'
-                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java', runIf: gitCommit == 'master') {
+                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java') {
                     sh "mvn clean install"
                 }
                 
-                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java', runIf: gitCommit == 'master') {
+                devfactory (portfolio: 'DevFactory', product: 'ZStore-Spring', types: 'Java') {
                     sh "mvn test"
                 }
 
