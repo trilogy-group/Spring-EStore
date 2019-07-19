@@ -87,3 +87,6 @@ It is used to run unit tests.
 It is used to run integration tests.
 This plugin will not fail build during `mvn integration-test` phase.
 Failsafe plugin only executes test classes named `*/IT.java, **/*IT.java, **/*ITCase.java`
+
+## Docker settings
+TODO
